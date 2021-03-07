@@ -11,6 +11,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring.boot.mybatis.version>2.1.4</spring.boot.mybatis.version>
+        <hutool.version>5.5.9</hutool.version>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -25,7 +26,7 @@
         <module>taxi-user</module>
         <module>taxi-pay</module>
         <module>taxi-api</module>
-        <module>infrastructure</module>
+        <module>taxi-infrastructure</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -43,6 +44,11 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>30.1-jre</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.5.9</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -85,6 +91,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
     </dependencies>
     <profiles>
         <profile>
@@ -114,6 +124,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.khaki.taxi.TaxiApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

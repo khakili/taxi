@@ -3,6 +3,8 @@ package com.khaki.taxi.infrastructure.exception;
 import com.khaki.taxi.infrastructure.BusinessException;
 
 public class CacheKeyNotFoundException extends BusinessException {
+    private static final long serialVersionUID=1L;
+
     public CacheKeyNotFoundException() {
     }
 
